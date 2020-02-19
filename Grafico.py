@@ -101,13 +101,11 @@ class Grafico:
     def verifCruzamento(self):
         try:
             if (self.yClosing[self.pos] > self.ySma[self.pos]) and (self.yClosing[self.pos - 1] < self.ySma[self.pos - 1]):
-                if self.yRsi[self.pos] < 50:
-                    print(f'COMPRE! Cruzamento em {self.x[self.pos]}')
-                    self.tela.ordem_de_compra(self.ativo,f'Cruzamento em {self.x[self.pos]}')
+                print(f'COMPRE! Cruzamento em {self.x[self.pos]}')
+                self.tela.ordem_de_compra(self.ativo,f'Cruzamento em {self.x[self.pos]}')
             elif (self.yClosing[self.pos] < self.ySma[self.pos]) and (self.yClosing[self.pos - 1] > self.ySma[self.pos - 1]):
-                if self.yRsi[self.pos] > 50:
-                    print(f'VENDA! Cruzamento em {self.x[self.pos]}')
-                    self.tela.ordem_de_venda(self.ativo,f'Cruzamento em {self.x[self.pos]}')
+                print(f'VENDA! Cruzamento em {self.x[self.pos]}')
+                self.tela.ordem_de_venda(self.ativo,f'Cruzamento em {self.x[self.pos]}')
 
         except IndexError:
             print('IndexError')

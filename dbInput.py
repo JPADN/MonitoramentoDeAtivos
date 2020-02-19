@@ -59,7 +59,9 @@ def requestParaDB(link,indicador,nomeDoAtivo):
     print(rawJson)
     salvar_json_no_banco(nomeDoAtivo, indicador, rawJson)
 
-#  A API gratuita da Alpha Vantage tem limite de 5 requisições por minutos
+# Para que o código execute, é necessário rodar todos os requestParaDB à seguir uma única vez
+# Só podem ser executados 5 requestParaDB por minuto, haja vista que a API possui limite de requisição por minuto.
+
 # ------------------------------------------------------------------------------------------------------------------------------------------
 # PETR4 (Petrobrás)
 # requestParaDB('https://www.alphavantage.co/query?function=SMA&symbol=PETR4.SA&interval=daily&time_period=20&series_type=close&apikey=08WB6TZXDDI5RM8S',
